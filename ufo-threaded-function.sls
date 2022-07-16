@@ -30,13 +30,13 @@
             (with-mutex (optional-mutex optional)
               (optional-value-set! optional value)
               (optional-finished?-set! optional #t)
-              (condition-signal (optional-condition optional))
+              (condition-broadcast (optional-condition optional))
           ))))
       optional)))
 
 (define (de-optional optional)
-  (with-mutex (optional-mutex optional)
-    (let loop ()
+  (let loop ()
+    (with-mutex (optional-mutex optional)
       (if (optional-finished? optional) 
         (optional-value optional)
         (begin
