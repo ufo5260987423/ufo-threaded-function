@@ -9,7 +9,7 @@
     threaded-vector-map )
   (import (chezscheme) (ufo-thread-pool))
 
-(define default-pool (init-thread-pool 8))
+(define default-pool (init-thread-pool))
 
 (define (pool-size-ref) (thread-pool-size-ref default-pool))
 (define (pool-size-add value) (thread-pool-size-add default-pool value))
@@ -30,8 +30,7 @@
             (with-mutex (optional-mutex optional)
               (optional-value-set! optional value)
               (optional-finished?-set! optional #t)
-              (condition-broadcast (optional-condition optional))
-          ))))
+              (condition-broadcast (optional-condition optional))))))
       optional)))
 
 (define (de-optional optional)

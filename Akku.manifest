@@ -1,9 +1,9 @@
 #!r6rs ; -*- mode: scheme; coding: utf-8 -*-
 (import (akku format manifest))
 
-(akku-package ("ufo-threaded-function" "1.0.2")
+(akku-package ("ufo-threaded-function" "1.0.3")
   (synopsis "This package contains threaded-map, threaded-vector-map and such threaded functions for chez scheme.")
   (authors "WANG ZHENG")
   (license "MIT")
-  (depends ("ufo-thread-pool" "^1.0.0") ("chez-srfi" ">=0.0.0-akku <1.0.0"))
+  (depends ("ufo-thread-pool" "^1.0.2") ("chez-srfi" ">=0.0.0-akku <1.0.0"))
 )
