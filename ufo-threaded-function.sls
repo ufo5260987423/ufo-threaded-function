@@ -1,8 +1,3 @@
-;; -*- mode: scheme; coding: utf-8 -*-
-;; Copyright (c) 2022 Guy Q. Schemer
-;; SPDX-License-Identifier: MIT
-#!r6rs
-
 (library (ufo-threaded-function)
   (export pool-size-ref pool-size-add 
     threaded-map 
